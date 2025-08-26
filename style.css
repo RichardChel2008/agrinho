@@ -1,0 +1,193 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f9f7;
+    color: #264653;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #2a9d8f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 7px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1f6e62;
+}
+
+/* Espaço para compensar o fixed header */
+body > header + section,
+body > header + main {
+    padding-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://i.imgur.com/J5aRZ2h.jpg') center center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 20px 50px;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+.hero img {
+    width: 140px;
+    border-radius: 15px;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
+}
+
+/* Main Content Sections */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    margin-bottom: 50px;
+}
+
+.content-section h2 {
+    color: #2a9d8f;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #2a9d8f;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content-wrapper.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-wrapper img {
+    max-width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.content-wrapper p {
+    max-width: 50%;
+    font-size: 1.1rem;
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #264653;
+    color: #e9ecef;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 60px;
+    font-size: 1rem;
+    border-top: 5px solid #2a9d8f;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Responsividade */
+@media(max-width: 768px) {
+    .content-wrapper img,
+    .content-wrapper p {
+        max-width: 100%;
+    }
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
